@@ -51,4 +51,13 @@ set(COMPONENT_SRCS
 )
 endif()
 
+if (CONFIG_ESP_CUSTOM_CIRCUIT_BOARD)
+message(STATUS "Current board name is " CONFIG_ESP_CUSTOM_CIRCUIT_BOARD)
+list(APPEND COMPONENT_ADD_INCLUDEDIRS ./custom_circuit)
+set(COMPONENT_SRCS
+./custom_circuit/board.c
+./custom_circuit/board_pins_config.c
+)
+endif()
+
 register_component()

@@ -45,7 +45,7 @@ typedef enum {
 
 void app_main()
 {
-#if defined CONFIG_ESP_LYRAT_V4_3_BOARD
+#if defined CONFIG_ESP_LYRAT_V4_3_BOARD || defined CONFIG_ESP_CUSTOM_CIRCUIT_BOARD
     gpio_config_t gpio_conf = {
         .pin_bit_mask = 1UL << get_green_led_gpio(),
         .mode = GPIO_MODE_OUTPUT,
@@ -150,13 +150,13 @@ void app_main()
                 break;
             case OPEN_THE_LIGHT:
                 ESP_LOGI(TAG, "Turn on the light");
-#if defined CONFIG_ESP_LYRAT_V4_3_BOARD
+#if defined CONFIG_ESP_LYRAT_V4_3_BOARD || CONFIG_ESP_CUSTOM_CIRCUIT_BOARD
                 gpio_set_level(get_green_led_gpio(), 1);
 #endif
                 break;
             case CLOSE_THE_LIGHT:
                 ESP_LOGI(TAG, "Turn off the light");
-#if defined CONFIG_ESP_LYRAT_V4_3_BOARD
+#if defined CONFIG_ESP_LYRAT_V4_3_BOARD || CONFIG_ESP_CUSTOM_CIRCUIT_BOARD
                 gpio_set_level(get_green_led_gpio(), 0);
 #endif
                 break;

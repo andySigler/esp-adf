@@ -31,3 +31,8 @@ ifdef CONFIG_ESP_LYRAT_MINI_V1_1_BOARD
 COMPONENT_ADD_INCLUDEDIRS += ./lyrat_mini_v1_1
 COMPONENT_SRCDIRS += ./lyrat_mini_v1_1
 endif
+
+ifdef CONFIG_ESP_CUSTOM_CIRCUIT_BOARD
+COMPONENT_ADD_INCLUDEDIRS += ./custom_circuit
+COMPONENT_SRCDIRS += ./custom_circuit
+endif
